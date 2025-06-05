@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ecotech-cache-v1';
+const CACHE_NAME = 'ecotech-cache-v2';
 const urlsToCache = [
   './index.html',
   './style.css',
