@@ -1,0 +1,182 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2E7D32;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Seção de Notificações */
+.notification-section {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Botão de Notificações */
+#enable-notifications {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px 0;
+  min-width: 200px;
+}
+
+#enable-notifications:hover:not(:disabled) {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+#enable-notifications:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+#enable-notifications:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Status da Notificação */
+#notification-status {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+/* Estados do Status */
+#notification-status[class*="granted"] {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+#notification-status[class*="denied"] {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+#notification-status[class*="offline"] {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+/* Animação de pulso para botão ativo */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .notification-section {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  #enable-notifications {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 180px;
+  }
+}
+
+/* Estilo para indicador de conectividade */
+.connectivity-indicator {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.connectivity-indicator.online {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.connectivity-indicator.offline {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Animação de entrada para notificações */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.notification-enter {
+  animation: slideInDown 0.3s ease-out;
+}

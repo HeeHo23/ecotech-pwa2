@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4CAF50">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192-192.png">
+  <title>EcoTech PWA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bem-vindo à EcoTech</h1>
+  <p>Este site está agora disponível como uma PWA!</p>
+  
+  <div class="notification-section">
+    <h2>Notificações Push</h2>
+    <button id="enable-notifications">Ativar Notificações</button>
+    <p id="notification-status">Status: Aguardando permissão</p>
+  </div>
+  
+  <!-- Importação dos scripts do Firebase primeiro -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-messaging.js"></script>
+
+  <!-- Seu script de configuração -->
+  <script type="module" src="app.js"></script>
+  
+</body>
+</html>
